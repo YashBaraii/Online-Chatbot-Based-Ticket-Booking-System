@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Success</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .success-container {
+            background-color: #fff;
+            padding: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            border-radius: 8px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .circle {
+            width: 80px;
+            height: 80px;
+            background-color: #4CAF50;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 40px;
+            color: white;
+            animation: scaleIn 1s forwards;
+        }
+        .success {
+            font-size: 24px;
+            color: green;
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: fadeIn 2s 1.5s forwards;
+        }
+        .details {
+            margin-top: 20px;
+            text-align: left;
+        }
+        .details p {
+            margin: 5px 0;
+        }
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+            text-decoration: none;
+            margin-top: 20px;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+
+        @keyframes scaleIn {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="success-container">
+        <div class="circle">
+            ✔
+        </div>
+        <div class="success">
+            Payment Successful!
+        </div>
+        <div id="userDetails"></div>
+        <div id="bookingDetails" class="details"></div>
+        <a href="payment.html" class="button">Go Back</a>
+    </div>
+
+    <script>
+        // Retrieve user payment details from session storage
+        const paymentData = sessionStorage.getItem("paymentData");
+        if (paymentData) {
+            const data = JSON.parse(paymentData);
+
+            // Display payment details
+            document.getElementById("userDetails").innerHTML = `
+                <p><strong>Name:</strong> ${data.fullName}</p>
+                <p><strong>Email:</strong> ${data.email}</p>
+                <p><strong>Phone:</strong> ${data.phoneNumber}</p>
+            `;
+        } else {
+            document.getElementById("userDetails").innerHTML = `
+                <p style="color: red;">No payment data available.</p>
+            `;
+        }
+
+        // Fetch booking details from the chatbot JSON file
+        async function fetchBookingDetails() {
+            try {
+                const response = await fetch('chatbot-data.json'); // Replace with the actual API endpoint or file path
+                const bookingData = await response.json();
+
+                // Display booking details
+                const bookingDetails = `
+                    <h3>Booking Details:</h3>
+                    <p><strong>Place:</strong> ${bookingData.place}</p>
+                    <p><strong>Cost:</strong> $${bookingData.cost}</p>
+                    <p><strong>Time Slot:</strong> ${bookingData.timeSlot}</p>
+                `;
+                document.getElementById("bookingDetails").innerHTML = bookingDetails;
+            } catch (error) {
+                console.error("Error fetching booking details:", error);
+                document.getElementById("bookingDetails").innerHTML = `
+                    <p style="color: red;">Unable to fetch booking details.</p>
+                `;
+            }
+        }
+
+        
+    </script>
+
+</body>
+</html>

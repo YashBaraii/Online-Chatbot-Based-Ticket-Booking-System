@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heritage Sites Blog</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .search-container {
+            margin-top: 1rem;
+        }
+
+        .search-container input {
+            padding: 0.5rem;
+            font-size: 1rem;
+            width: 200px;
+        }
+
+        .search-container button {
+            padding: 0.5rem;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        main {
+            flex: 1;
+            padding: 1rem;
+        }
+
+        section {
+            margin-bottom: 2rem;
+        }
+
+        section h2 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 0.5rem;
+        }
+
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .site-image {
+            width: 100%;
+            height: auto;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Indian Heritage Sites Blog</h1>
+        <nav>
+            <ul>
+                <li><a href="#agra-fort">Agra Fort</a></li>
+                <li><a href="#ajanta-caves">Ajanta Caves</a></li>
+                <li><a href="#ellora-caves">Ellora Caves</a></li>
+                <li><a href="#taj-mahal">Taj Mahal</a></li>
+                <li><a href="#group-monuments-mahabalipuram">Group of Monuments at Mahabalipuram</a></li>
+                <li><a href="#sun-temple-konarak">Sun Temple, Konârak</a></li>
+                <li><a href="#kaziranga-national-park">Kaziranga National Park</a></li>
+                <li><a href="#keoladeo-national-park">Keoladeo National Park</a></li>
+                <li><a href="#manas-wildlife-sanctuary">Manas Wildlife Sanctuary</a></li>
+                <li><a href="#churches-convents-goa">Churches and Convents of Goa</a></li>
+                <li><a href="#fatehpur-sikri">Fatehpur Sikri</a></li>
+                <li><a href="#group-monuments-hampi">Group of Monuments at Hampi</a></li>
+                <li><a href="#khajuraho-group-monuments">Khajuraho Group of Monuments</a></li>
+                <li><a href="#elephanta-caves">Elephanta Caves</a></li>
+                <li><a href="#great-living-chola-temples">Great Living Chola Temples</a></li>
+                <li><a href="#group-monuments-pattadakal">Group of Monuments at Pattadakal</a></li>
+                <li><a href="#sundarbans-national-park">Sundarbans National Park</a></li>
+                <li><a href="#nanda-devi-valley-flowers">Nanda Devi and Valley of Flowers National Parks</a></li>
+                <li><a href="#buddhist-monuments-sanchi">Buddhist Monuments at Sanchi</a></li>
+                <li><a href="#humayuns-tomb">Humayun's Tomb, Delhi</a></li>
+                <li><a href="#qutb-minar-delhi">Qutb Minar and its Monuments, Delhi</a></li>
+                <li><a href="#mountain-railways-india">Mountain Railways of India</a></li>
+                <li><a href="#mahabodhi-temple">Mahabodhi Temple Complex at Bodh Gaya</a></li>
+                <li><a href="#rock-shelters-bhimbetka">Rock Shelters of Bhimbetka</a></li>
+                <li><a href="#champaner-pavagadh">Champaner-Pavagadh Archaeological Park</a></li>
+                <li><a href="#chhatrapati-shivaji-terminus">Chhatrapati Shivaji Terminus (formerly Victoria
+                        Terminus)</a></li>
+                <li><a href="#red-fort-complex">Red Fort Complex</a></li>
+                <li><a href="#jantar-mantar-jaipur">The Jantar Mantar, Jaipur</a></li>
+                <li><a href="#western-ghats">Western Ghats</a></li>
+                <li><a href="#hill-forts-rajasthan">Hill Forts of Rajasthan</a></li>
+                <li><a href="#great-himalayan-national-park">Great Himalayan National Park Conservation Area</a></li>
+                <li><a href="#rani-ki-vav">Rani-ki-Vav (the Queen's Stepwell) at Patan, Gujarat</a></li>
+                <li><a href="#nalanda-mahavihara">Archaeological Site of Nalanda Mahavihara at Nalanda, Bihar</a></li>
+                <li><a href="#khangchendzonga-national-park">Khangchendzonga National Park</a></li>
+                <li><a href="#architectural-work-le-corbusier">The Architectural Work of Le Corbusier, an Outstanding
+                        Contribution to the Modern Movement</a></li>
+                <li><a href="#historic-city-ahmadabad">Historic City of Ahmadabad</a></li>
+                <li><a href="#victorian-gothic-art-deco-mumbai">Victorian Gothic and Art Deco Ensembles of Mumbai</a>
+                </li>
+                <li><a href="#jaipur-city">Jaipur City, Rajasthan</a></li>
+                <li><a href="#dholavira">Dholavira: a Harappan City</a></li>
+                <li><a href="#kakatiya-rudreshwara">Kakatiya Rudreshwara (Ramappa) Temple, Telangana</a></li>
+                <li><a href="#sacred-ensembles-hoysalas">Sacred Ensembles of the Hoysalas</a></li>
+                <li><a href="#santiniketan">Santiniketan</a></li>
+                <li><a href="#moidams-ahom-dynasty">Moidams - the Mound-Burial System of the Ahom Dynasty</a></li>
+            </ul>
+        </nav>
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search heritage sites..."onkeyup="handleKeyUp(event)">
+            <button onclick="searchSites()">Search</button>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- Agra Fort Section -->
+        <section id="agra-fort">
+            <h2>Agra Fort</h2>
+            <img src="agra-fort.jpg" alt="Agra Fort" class="site-image">
+            <p><strong>Location:</strong> Agra, India</p>
+            <p><strong>Historical Background:</strong> The Agra Fort is a large red sandstone fort located on the right
+                bank of the Yamuna River. It served as the main residence of the Mughal emperors until 1638, when the
+                capital was shifted to Delhi. It was designated a UNESCO World Heritage Site in 1983.</p>
+            <p><strong>Architectural Features:</strong> The fort is known for its massive walls, intricate marble
+                inlays, and stunning palaces, including the Jahangir Palace and the Khas Mahal.</p>
+        </section>
+
+        <!-- Ajanta Caves Section -->
+        <section id="ajanta-caves">
+            <h2>Ajanta Caves</h2>
+            <img src="ajanta-caves.jpg" alt="Ajanta Caves" class="site-image">
+            <p><strong>Location:</strong> Maharashtra, India</p>
+            <p><strong>Historical Background:</strong> The Ajanta Caves are a group of 30 rock-cut Buddhist cave temples
+                dating from the 2nd century BCE to about 480 CE. They are known for their exquisite paintings and
+                sculptures and were rediscovered in 1819. They were designated a UNESCO World Heritage Site in 1983.</p>
+            <p><strong>Architectural Features:</strong> The caves include chaitya halls and vihara with intricate
+                carvings and frescoes depicting the life of Buddha and various Jataka tales.</p>
+        </section>
+
+        <!-- Ellora Caves Section -->
+        <section id="ellora-caves">
+            <h2>Ellora Caves</h2>
+            <img src="ellora-caves.jpg" alt="Ellora Caves" class="site-image">
+            <p><strong>Location:</strong> Maharashtra, India</p>
+            <p><strong>Historical Background:</strong> The Ellora Caves are a complex of 34 rock-cut temples and
+                monasteries that represent three different religions: Hinduism, Buddhism, and Jainism. Dating from the
+                5th to 10th centuries, they were designated a UNESCO World Heritage Site in 1983.</p>
+            <p><strong>Architectural Features:</strong> The caves feature impressive rock-cut temples and monasteries
+                with intricate carvings, including the Kailasa Temple, one of the largest monolithic structures in the
+                world.</p>
+        </section>
+
+        <!-- Taj Mahal Section -->
+        <section id="taj-mahal">
+            <h2>Taj Mahal</h2>
+            <img src="taj-mahal.jpg" alt="Taj Mahal" class="site-image">
+            <p><strong>Location:</strong> Agra, India</p>
+            <p><strong>Historical Background:</strong> The Taj Mahal is a white marble mausoleum built by Mughal Emperor
+                Shah Jahan in memory of his wife Mumtaz Mahal. Completed in 1653, it is renowned for its stunning beauty
+                and was designated a UNESCO World Heritage Site in 1983.</p>
+            <p><strong>Architectural Features:</strong> The mausoleum is set in a vast Mughal garden and features a
+                large dome, minarets, and intricate marble inlays and carvings.</p>
+        </section>
+
+        <!-- Group of Monuments at Mahabalipuram Section -->
+        <section id="mahabalipuram">
+            <h2>Group of Monuments at Mahabalipuram</h2>
+            <img src="mahabalipuram.jpg" alt="Group of Monuments at Mahabalipuram" class="site-image">
+            <p><strong>Location:</strong> Tamil Nadu, India</p>
+            <p><strong>Historical Background:</strong> The Group of Monuments at Mahabalipuram consists of rock-cut
+                temples and sculptures dating from the 7th to 9th centuries. These monuments are notable for their
+                elaborate carvings and were designated a UNESCO World Heritage Site in 1984.</p>
+            <p><strong>Architectural Features:</strong> The site includes the Shore Temple, the Pancha Rathas (Five
+                Chariots), and the Descent of the Ganges, a massive bas-relief sculpture.</p>
+        </section>
+
+        <!-- Sun Temple, Konârak Section -->
+        <section id="sun-temple-konarak">
+            <h2>Sun Temple, Konârak</h2>
+            <img src="sun-temple-konarak.jpg" alt="Sun Temple, Konârak" class="site-image">
+            <p><strong>Location:</strong> Odisha, India</p>
+            <p><strong>Historical Background:</strong> The Sun Temple at Konârak, built in the 13th century, is
+                dedicated to the Sun God Surya. The temple is renowned for its chariot-like structure and intricate
+                carvings and was designated a UNESCO World Heritage Site in 1984.</p>
+            <p><strong>Architectural Features:</strong> The temple is designed as a giant chariot with twelve pairs of
+                wheels, and its walls are adorned with detailed sculptures and carvings.</p>
+        </section>
+
+        <!-- Kaziranga National Park Section -->
+        <section id="kaziranga-national-park">
+            <h2>Kaziranga National Park</h2>
+            <img src="kaziranga-national-park.jpg" alt="Kaziranga National Park" class="site-image">
+            <p><strong>Location:</strong> Assam, India</p>
+            <p><strong>Historical Background:</strong> Kaziranga National Park is a protected area known for its
+                population of the Indian one-horned rhinoceros. It was established in 1908 and became a UNESCO World
+                Heritage Site in 1985.</p>
+            <p><strong>Architectural Features:</strong> The park features diverse landscapes including grasslands,
+                wetlands, and forests, providing habitat for a variety of wildlife.</p>
+        </section>
+
+        <!-- Keoladeo National Park Section -->
+        <section id="keoladeo-national-park">
+            <h2>Keoladeo National Park</h2>
+            <img src="keoladeo-national-park.jpg" alt="Keoladeo National Park" class="site-image">
+            <p><strong>Location:</strong> Rajasthan, India</p>
+            <p><strong>Historical Background:</strong> Keoladeo National Park, also known as Bharatpur Bird Sanctuary,
+                is a man-made wetland that serves as a major stopover for migratory birds. It was designated a UNESCO
+                World Heritage Site in 1985.</p>
+            <p><strong>Architectural Features:</strong> The park is characterized by its diverse wetlands and supports a
+                large population of bird species, including pelicans, storks, and eagles.</p>
+        </section>
+
+        <!-- Manas Wildlife Sanctuary Section -->
+        <section id="manas-wildlife-sanctuary">
+            <h2>Manas Wildlife Sanctuary</h2>
+            <img src="manas-wildlife-sanctuary.jpg" alt="Manas Wildlife Sanctuary" class="site-image">
+            <p><strong>Location:</strong> Assam, India</p>
+            <p><strong>Historical Background:</strong> Manas Wildlife Sanctuary is known for its rich biodiversity and
+                is home to several endangered species, including the Assam roofed turtle and the pygmy hog. It was
+                designated a UNESCO World Heritage Site in 1985.</p>
+            <p><strong>Architectural Features:</strong> The sanctuary includes grasslands, forests, and river systems,
+                providing a diverse habitat for wildlife.</p>
+        </section>
+
+        <!-- Churches and Convents of Goa Section -->
+        <section id="churches-convents-goa">
+            <h2>Churches and Convents of Goa</h2>
+            <img src="churches-convents-goa.jpg" alt="Churches and Convents of Goa" class="site-image">
+            <p><strong>Location:</strong> Goa, India</p>
+            <p><strong>Historical Background:</strong> The Churches and Convents of Goa are a collection of churches and
+                convents that reflect the influence of Portuguese colonial rule. They were designated a UNESCO World
+                Heritage Site in 1986.</p>
+            <p><strong>Architectural Features:</strong> Notable structures include the Basilica of Bom Jesus and the Sé
+                Cathedral, which showcase Portuguese colonial architecture and religious art.</p>
+        </section>
+
+        <!-- Fatehpur Sikri Section -->
+        <section id="fatehpur-sikri">
+            <h2>Fatehpur Sikri</h2>
+            <img src="fatehpur-sikri.jpg" alt="Fatehpur Sikri" class="site-image">
+            <p><strong>Location:</strong> Uttar Pradesh, India</p>
+            <p><strong>Historical Background:</strong> Fatehpur Sikri is a former Mughal capital built by Emperor Akbar
+                in the late 16th century. It was designated a UNESCO World Heritage Site in 1986.</p>
+            <p><strong>Architectural Features:</strong> The site includes an array of palaces, mosques, and
+                administrative buildings, such as the Buland Darwaza and the Diwan-i-Khas.</p>
+        </section>
+
+        <!-- Group of Monuments at Hampi Section -->
+        <section id="hampi">
+            <h2>Group of Monuments at Hampi</h2>
+            <img src="hampi.jpg" alt="Group of Monuments at Hampi" class="site-image">
+            <p><strong>Location:</strong> Karnataka, India</p>
+            <p><strong>Historical Background:</strong> The Group of Monuments at Hampi are the remnants of the
+                Vijayanagara Empire and date from the 14th to 16th centuries. They were designated a UNESCO World
+                Heritage Site in 1986.</p>
+            <p><strong>Architectural Features:</strong> The site features numerous temples, palaces, and market streets,
+                including the Virupaksha Temple and the Stone Chariot.</p>
+        </section>
+
+        <!-- Khajuraho Group of Monuments Section -->
+        <section id="khajuraho">
+            <h2>Khajuraho Group of Monuments</h2>
+            <img src="khajuraho.jpg" alt="Khajuraho Group of Monuments" class="site-image">
+            <p><strong>Location:</strong> Madhya Pradesh, India</p>
+            <p><strong>Historical Background:</strong> The Khajuraho Group of Monuments is known for its well-preserved
+                temples with intricate erotic sculptures. They were built between 950 and 1050 CE and were designated a
+                UNESCO World Heritage Site in 1986.</p>
+            <p><strong>Architectural Features:</strong> The temples are famous for their elaborate carvings and
+                sculptures depicting various aspects of life and spirituality.</p>
+        </section>
+
+        <!-- Elephanta Caves Section -->
+        <section id="elephanta-caves">
+            <h2>Elephanta Caves</h2>
+            <img src="elephanta-caves.jpg" alt="Elephanta Caves" class="site-image">
+            <p><strong>Location:</strong> Maharashtra, India</p>
+            <p><strong>Historical Background:</strong> The Elephanta Caves are a network of sculpted caves located on
+                Elephanta Island. Dating from the 5th to 8th centuries, they were designated a UNESCO World Heritage
+                Site in 1987.</p>
+            <p><strong>Architectural Features:</strong> The caves are renowned for their Hindu sculptures, including the
+                massive Trimurti (three-headed figure) of Lord Shiva.</p>
+        </section>
+
+        <!-- Great Living Chola Temples Section -->
+        <section id="great-living-chola-temples">
+            <h2>Great Living Chola Temples</h2>
+            <img src="great-living-chola-temples.jpg" alt="Great Living Chola Temples" class="site-image">
+            <p><strong>Location:</strong> Tamil Nadu, India</p>
+            <p><strong>Historical Background:</strong> The Great Living Chola Temples consist of three temples built
+                during the Chola Dynasty: Brihadeeswarar Temple, Airavatesvara Temple, and Brihadeeswarar Temple at
+                Gangaikonda Cholapuram. They were designated a UNESCO World Heritage Site in 1987.</p>
+            <p><strong>Architectural Features:</strong> These temples are known for their grand architecture and
+                extensive use of granite, with detailed carvings and monumental sculptures.</p>
+        </section>
+
+        <!-- Group of Monuments at Pattadakal Section -->
+        <section id="pattadakal">
+            <h2>Group of Monuments at Pattadakal</h2>
+            <img src="pattadakal.jpg" alt="Group of Monuments at Pattadakal" class="site-image">
+            <p><strong>Location:</strong> Karnataka, India</p>
+            <p><strong>Historical Background:</strong> The Group of Monuments at Pattadakal includes a collection of
+                Hindu and Jain temples built between the 7th and 8th centuries. They were designated a UNESCO World
+                Heritage Site in 1987.</p>
+            <p><strong>Architectural Features:</strong> The site is known for its architectural variety, including the
+                temples of Virupaksha, Mallikarjuna, and the Jain Narayana Temple.</p>
+        </section>
+
+        <!-- Sundarbans National Park Section -->
+        <section id="sundarbans-national-park">
+            <h2>Sundarbans National Park</h2>
+            <img src="sundarbans-national-park.jpg" alt="Sundarbans National Park" class="site-image">
+            <p><strong>Location:</strong> West Bengal, India</p>
+            <p><strong>Historical Background:</strong> Sundarbans National Park is renowned for its mangrove forests and
+                the Bengal tiger. It was designated a UNESCO World Heritage Site in 1987.</p>
+            <p><strong>Architectural Features:</strong> The park features a network of rivers, mudflats, and dense
+                mangroves, providing a unique habitat for wildlife.</p>
+        </section>
+
+        <!-- Nanda Devi and Valley of Flowers National Parks Section -->
+        <section id="nanda-devi-valley-of-flowers">
+            <h2>Nanda Devi and Valley of Flowers National Parks</h2>
+            <img src="nanda-devi-valley-of-flowers.jpg" alt="Nanda Devi and Valley of Flowers National Parks"
+                class="site-image">
+            <p><strong>Location:</strong> Uttarakhand, India</p>
+            <p><strong>Historical Background:</strong> These parks are known for their stunning natural beauty and
+                biodiversity. The Valley of Flowers is famous for its alpine flowers, while Nanda Devi is known for its
+                rugged mountains. They were designated a UNESCO World Heritage Site in 1988.</p>
+            <p><strong>Architectural Features:</strong> The parks feature high mountain peaks, lush meadows, and a wide
+                range of flora and fauna.</p>
+        </section>
+
+        <!-- Buddhist Monuments at Sanchi Section -->
+        <section id="buddhist-monuments-sanchi">
+            <h2>Buddhist Monuments at Sanchi</h2>
+            <img src="buddhist-monuments-sanchi.jpg" alt="Buddhist Monuments at Sanchi" class="site-image">
+            <p><strong>Location:</strong> Madhya Pradesh, India</p>
+            <p><strong>Historical Background:</strong> The Buddhist Monuments at Sanchi include a group of stupas,
+                monasteries, and temples dating from the 3rd century BCE to the 12th century CE. They were designated a
+                UNESCO World Heritage Site in 1989.</p>
+            <p><strong>Architectural Features:</strong> The site is known for its large stupas, such as the Great Stupa,
+                and its intricate carvings and gateways.</p>
+        </section>
+
+        <!-- Humayun's Tomb, Delhi Section -->
+        <section id="humayuns-tomb">
+            <h2>Humayun's Tomb, Delhi</h2>
+            <img src="humayuns-tomb.jpg" alt="Humayun's Tomb" class="site-image">
+            <p><strong>Location:</strong> Delhi, India</p>
+            <p><strong>Historical Background:</strong> Humayun's Tomb is a grand Mughal mausoleum built in the 16th
+                century for Emperor Humayun. It was designated a UNESCO World Heritage Site in 1993.</p>
+            <p><strong>Architectural Features:</strong> The tomb is known for its Persian-style garden layout and the
+                use of red sandstone and marble in its construction.</p>
+        </section>
+
+        <!-- Qutb Minar and its Monuments, Delhi Section -->
+        <section id="qutb-minar-delhi">
+            <h2>Qutb Minar and its Monuments, Delhi</h2>
+            <img src="qutb-minar-delhi.jpg" alt="Qutb Minar" class="site-image">
+            <p><strong>Location:</strong> Delhi, India</p>
+            <p><strong>Historical Background:</strong> The Qutb Minar is a 73-meter-tall minaret built in the 12th
+                century by Qutb-ud-din Aibak. The surrounding monuments are from the same era and were designated a
+                UNESCO World Heritage Site in 1993.</p>
+            <p><strong>Architectural Features:</strong> The site includes the Qutb Minar, the Quwwat-ul-Islam Mosque,
+                and the Iron Pillar of Delhi, known for its intricate carvings and inscriptions.</p>
+        </section>
+
+        <!-- Mountain Railways of India Section -->
+        <section id="mountain-railways-india">
+            <h2>Mountain Railways of India</h2>
+            <img src="mountain-railways-india.jpg" alt="Mountain Railways of India" class="site-image">
+            <p><strong>Location:</strong> Various locations, India</p>
+            <p><strong>Historical Background:</strong> The Mountain Railways of India include the Darjeeling Himalayan
+                Railway, the Nilgiri Mountain Railway, and the Kalka-Shimla Railway. These railways were designated a
+                UNESCO World Heritage Site in 1999.</p>
+            <p><strong>Architectural Features:</strong> These railways are known for their scenic routes and unique
+                engineering feats, such as the steep gradients and loop-the-loops.</p>
+        </section>
+
+        <!-- Mahabodhi Temple Complex at Bodh Gaya Section -->
+        <section id="mahabodhi-temple-complex">
+            <h2>Mahabodhi Temple Complex at Bodh Gaya</h2>
+            <img src="mahabodhi-temple-complex.jpg" alt="Mahabodhi Temple Complex" class="site-image">
+            <p><strong>Location:</strong> Bihar, India</p>
+            <p><strong>Historical Background:</strong> The Mahabodhi Temple Complex is a significant Buddhist site where
+                it is believed that Buddha attained enlightenment. The temple was built in the 3rd century BCE and was
+                designated a UNESCO World Heritage Site in 2002.</p>
+            <p><strong>Architectural Features:</strong> The complex includes the Mahabodhi Temple with its towering
+                spire and numerous stupas and monasteries.</p>
+        </section>
+
+        <!-- Rock Shelters of Bhimbetka Section -->
+        <section id="rock-shelters-bhimbetka">
+            <h2>Rock Shelters of Bhimbetka</h2>
+            <img src="rock-shelters-bhimbetka.jpg" alt="Rock Shelters of Bhimbetka" class="site-image">
+            <p><strong>Location:</strong> Madhya Pradesh, India</p>
+            <p><strong>Historical Background:</strong> The Rock Shelters of Bhimbetka are known for their prehistoric
+                rock paintings that date back to the Paleolithic era. They were designated a UNESCO World Heritage Site
+                in 2003.</p>
+            <p><strong>Architectural Features:</strong> The site includes numerous rock shelters with ancient cave
+                paintings depicting scenes of hunting, dancing, and daily life.</p>
+        </section>
+
+        <!-- Champaner-Pavagadh Archaeological Park Section -->
+        <section id="champaner-pavagadh">
+            <h2>Champaner-Pavagadh Archaeological Park</h2>
+            <img src="champaner-pavagadh.jpg" alt="Champaner-Pavagadh Archaeological Park" class="site-image">
+            <p><strong>Location:</strong> Gujarat, India</p>
+            <p><strong>Historical Background:</strong> Champaner-Pavagadh Archaeological Park is a historical site with
+                a mix of Hindu and Islamic monuments, including temples, mosques, and palaces. It was designated a
+                UNESCO World Heritage Site in 2004.</p>
+            <p><strong>Architectural Features:</strong> The park includes the ruins of the ancient city of Champaner,
+                including the Jami Masjid and the Sahar ki Masjid.</p>
+        </section>
+
+        <!-- Chhatrapati Shivaji Terminus Section -->
+        <section id="chhatrapati-shivaji-terminus">
+            <h2>Chhatrapati Shivaji Terminus</h2>
+            <img src="chhatrapati-shivaji-terminus.jpg" alt="Chhatrapati Shivaji Terminus" class="site-image">
+            <p><strong>Location:</strong> Mumbai, India</p>
+            <p><strong>Historical Background:</strong> Chhatrapati Shivaji Terminus (formerly Victoria Terminus) is a
+                historic railway station built in the late 19th century. It was designated a UNESCO World Heritage Site
+                in 2004.</p>
+            <p><strong>Architectural Features:</strong> The station is known for its Gothic Revival architecture,
+                including its ornate façade, high vaulted roof, and detailed stonework.</p>
+        </section>
+
+        <!-- Red Fort Complex Section -->
+        <section id="red-fort-complex">
+            <h2>Red Fort Complex</h2>
+            <img src="red-fort-complex.jpg" alt="Red Fort Complex" class="site-image">
+            <p><strong>Location:</strong> Delhi, India</p>
+            <p><strong>Historical Background:</strong> The Red Fort Complex, also known as Lal Qila, is a historic
+                fortification that served as the main residence of Mughal emperors. It was designated a UNESCO World
+                Heritage Site in 2007.</p>
+            <p><strong>Architectural Features:</strong> The fort is renowned for its red sandstone walls, grand gates,
+                and important structures like the Diwan-i-Aam and Diwan-i-Khas.</p>
+        </section>
+
+        <!-- The Jantar Mantar, Jaipur Section -->
+        <section id="jantar-mantar-jaipur">
+            <h2>The Jantar Mantar, Jaipur</h2>
+            <img src="jantar-mantar-jaipur.jpg" alt="The Jantar Mantar" class="site-image">
+            <p><strong>Location:</strong> Jaipur, India</p>
+            <p><strong>Historical Background:</strong> The Jantar Mantar in Jaipur is an astronomical observatory built
+                in the 18th century by Maharaja Jai Singh II. It was designated a UNESCO World Heritage Site in 2010.
+            </p>
+            <p><strong>Architectural Features:</strong> The site features large astronomical instruments, including the
+                Samrat Yantra and the Jai Prakash Yantra, used for observing celestial events.</p>
+        </section>
+
+        <!-- Western Ghats Section -->
+        <section id="western-ghats">
+            <h2>Western Ghats</h2>
+            <img src="western-ghats.jpg" alt="Western Ghats" class="site-image">
+            <p><strong>Location:</strong> Western India</p>
+            <p><strong>Historical Background:</strong> The Western Ghats are a mountain range running parallel to the
+                western coast of India. They were designated a UNESCO World Heritage Site in 2012 due to their rich
+                biodiversity.</p>
+            <p><strong>Architectural Features:</strong> The range includes lush forests, grasslands, and high peaks, and
+                is home to numerous endemic species of plants and animals.</p>
+        </section>
+
+        <!-- Hill Forts of Rajasthan Section -->
+        <section id="hill-forts-rajasthan">
+            <h2>Hill Forts of Rajasthan</h2>
+            <img src="hill-forts-rajasthan.jpg" alt="Hill Forts of Rajasthan" class="site-image">
+            <p><strong>Location:</strong> Rajasthan, India</p>
+            <p><strong>Historical Background:</strong> The Hill Forts of Rajasthan include several fortresses built on
+                hilltops, such as Chittorgarh, Kumbhalgarh, and Ranthambore. They were designated a UNESCO World
+                Heritage Site in 2013.</p>
+            <p><strong>Architectural Features:</strong> These forts are known for their strategic locations, defensive
+                architecture, and extensive fortifications.</p>
+        </section>
+
+        <!-- Great Himalayan National Park Conservation Area Section -->
+        <section id="great-himalayan-national-park">
+            <h2>Great Himalayan National Park Conservation Area</h2>
+            <img src="great-himalayan-national-park.jpg" alt="Great Himalayan National Park Conservation Area"
+                class="site-image">
+            <p><strong>Location:</strong> Himachal Pradesh, India</p>
+            <p><strong>Historical Background:</strong> The Great Himalayan National Park Conservation Area is known for
+                its rich biodiversity and dramatic landscapes. It was designated a UNESCO World Heritage Site in 2014.
+            </p>
+            <p><strong>Architectural Features:</strong> The park features alpine meadows, glaciers, and diverse flora
+                and fauna, including several endangered species.</p>
+        </section>
+
+        <!-- Rani-ki-Vav (the Queen’s Stepwell) at Patan, Gujarat Section -->
+        <section id="rani-ki-vav">
+            <h2>Rani-ki-Vav (the Queen’s Stepwell) at Patan, Gujarat</h2>
+            <img src="rani-ki-vav.jpg" alt="Rani-ki-Vav" class="site-image">
+            <p><strong>Location:</strong> Gujarat, India</p>
+            <p><strong>Historical Background:</strong> Rani-ki-Vav is a stepwell built in the 11th century by Queen
+                Udayamati. It was designated a UNESCO World Heritage Site in 2014.</p>
+            <p><strong>Architectural Features:</strong> The stepwell is renowned for its intricate carvings, including
+                depictions of Hindu deities and scenes from mythology.</p>
+        </section>
+
+        <!-- Archaeological Site of Nalanda Mahavihara at Nalanda, Bihar Section -->
+        <section id="nalanda-mahavihara">
+            <h2>Archaeological Site of Nalanda Mahavihara at Nalanda, Bihar</h2>
+            <img src="nalanda-mahavihara.jpg" alt="Archaeological Site of Nalanda Mahavihara" class="site-image">
+            <p><strong>Location:</strong> Bihar, India</p>
+            <p><strong>Historical Background:</strong> The site of Nalanda Mahavihara was a major center of learning and
+                Buddhist study from the 5th to 12th centuries. It was designated a UNESCO World Heritage Site in 2016.
+            </p>
+            <p><strong>Architectural Features:</strong> The site includes the ruins of ancient monasteries, temples, and
+                a large library.</p>
+        </section>
+
+        <!-- Khangchendzonga National Park Section -->
+        <section id="khangchendzonga-national-park">
+            <h2>Khangchendzonga National Park</h2>
+            <img src="khangchendzonga-national-park.jpg" alt="Khangchendzonga National Park" class="site-image">
+            <p><strong>Location:</strong> Sikkim, India</p>
+            <p><strong>Historical Background:</strong> Khangchendzonga National Park is known for its stunning
+                landscapes and diverse ecosystems. It was designated a UNESCO World Heritage Site in 2016.</p>
+            <p><strong>Architectural Features:</strong> The park features high mountain peaks, glaciers, and a range of
+                flora and fauna, including several rare and endangered species.</p>
+        </section>
+
+        <!-- The Architectural Work of Le Corbusier, an Outstanding Contribution to the Modern Movement Section -->
+        <section id="architectural-work-le-corbusier">
+            <h2>The Architectural Work of Le Corbusier, an Outstanding Contribution to the Modern Movement</h2>
+            <img src="architectural-work-le-corbusier.jpg" alt="Architectural Work of Le Corbusier" class="site-image">
+            <p><strong>Location:</strong> Various locations, India</p>
+            <p><strong>Historical Background:</strong> This designation includes Le Corbusier's architectural work in
+                Chandigarh, which has been influential in modern architecture. It was designated a UNESCO World Heritage
+                Site in 2016.</p>
+            <p><strong>Architectural Features:</strong> The site includes key buildings designed by Le Corbusier, such
+                as the Capitol Complex and the Chandigarh College of Architecture.</p>
+        </section>
+
+        <!-- Historic City of Ahmadabad Section -->
+        <section id="historic-city-ahmadabad">
+            <h2>Historic City of Ahmadabad</h2>
+            <img src="historic-city-ahmadabad.jpg" alt="Historic City of Ahmadabad" class="site-image">
+            <p><strong>Location:</strong> Gujarat, India</p>
+            <p><strong>Historical Background:</strong> The Historic City of Ahmadabad is known for its rich
+                architectural heritage and urban planning. It was founded in the 15th century by Sultan Ahmad Shah and
+                was designated a UNESCO World Heritage Site in 2017.</p>
+            <p><strong>Architectural Features:</strong> The city features a blend of Hindu and Islamic architecture,
+                including the Bhadra Fort, the Sidi Sayyed Mosque, and the Pols (residential quarters).</p>
+        </section>
+
+        <!-- Victorian Gothic and Art Deco Ensembles of Mumbai Section -->
+        <section id="victorian-gothic-art-deco-mumbai">
+            <h2>Victorian Gothic and Art Deco Ensembles of Mumbai</h2>
+            <img src="victorian-gothic-art-deco-mumbai.jpg" alt="Victorian Gothic and Art Deco Ensembles"
+                class="site-image">
+            <p><strong>Location:</strong> Mumbai, India</p>
+            <p><strong>Historical Background:</strong> The Victorian Gothic and Art Deco Ensembles of Mumbai are known
+                for their architectural diversity and significance. They were designated a UNESCO World Heritage Site in
+                2018.</p>
+            <p><strong>Architectural Features:</strong> The site includes a mix of Victorian Gothic and Art Deco
+                buildings, such as the Chhatrapati Shivaji Maharaj Terminus and the Eros Cinema, showcasing the
+                evolution of Mumbai's urban architecture.</p>
+        </section>
+
+        <!-- Jaipur City, Rajasthan Section -->
+        <section id="jaipur-city">
+            <h2>Jaipur City, Rajasthan</h2>
+            <img src="jaipur-city.jpg" alt="Jaipur City" class="site-image">
+            <p><strong>Location:</strong> Rajasthan, India</p>
+            <p><strong>Historical Background:</strong> Jaipur City, also known as the Pink City, was founded in the 18th
+                century by Maharaja Jai Singh II. It was designated a UNESCO World Heritage Site in 2019.</p>
+            <p><strong>Architectural Features:</strong> The city is known for its planned layout, palaces, forts, and
+                vibrant markets, including landmarks like the Hawa Mahal, City Palace, and Jantar Mantar.</p>
+        </section>
+
+        <!-- Dholavira: a Harappan City Section -->
+        <section id="dholavira">
+            <h2>Dholavira: a Harappan City</h2>
+            <img src="dholavira.jpg" alt="Dholavira" class="site-image">
+            <p><strong>Location:</strong> Gujarat, India</p>
+            <p><strong>Historical Background:</strong> Dholavira is an ancient Harappan city that dates back to the
+                Indus Valley Civilization. It was designated a UNESCO World Heritage Site in 2021.</p>
+            <p><strong>Architectural Features:</strong> The site features well-preserved ruins, including advanced urban
+                planning, drainage systems, and structures like the citadel and the lower town.</p>
+        </section>
+
+        <!-- Kakatiya Rudreshwara (Ramappa) Temple, Telangana Section -->
+        <section id="kakatiya-rudreshwara">
+            <h2>Kakatiya Rudreshwara (Ramappa) Temple, Telangana</h2>
+            <img src="kakatiya-rudreshwara.jpg" alt="Kakatiya Rudreshwara Temple" class="site-image">
+            <p><strong>Location:</strong> Telangana, India</p>
+            <p><strong>Historical Background:</strong> The Kakatiya Rudreshwara (Ramappa) Temple is a 13th-century
+                temple built during the Kakatiya Dynasty. It was designated a UNESCO World Heritage Site in 2021.</p>
+            <p><strong>Architectural Features:</strong> The temple is known for its intricate carvings, innovative
+                architectural techniques, and the use of sandstone in construction.</p>
+        </section>
+
+        <!-- Sacred Ensembles of the Hoysalas Section -->
+        <section id="sacred-ensembles-hoysalas">
+            <h2>Sacred Ensembles of the Hoysalas</h2>
+            <img src="sacred-ensembles-hoysalas.jpg" alt="Sacred Ensembles of the Hoysalas" class="site-image">
+            <p><strong>Location:</strong> Karnataka, India</p>
+            <p><strong>Historical Background:</strong> The Sacred Ensembles of the Hoysalas are a collection of temples
+                built by the Hoysala Dynasty between the 11th and 14th centuries. They were designated a UNESCO World
+                Heritage Site in 2021.</p>
+            <p><strong>Architectural Features:</strong> The temples are renowned for their ornate carvings, detailed
+                sculptures, and unique star-shaped ground plans.</p>
+        </section>
+
+        <!-- Santiniketan Section -->
+        <section id="santiniketan">
+            <h2>Santiniketan</h2>
+            <img src="santiniketan.jpg" alt="Santiniketan" class="site-image">
+            <p><strong>Location:</strong> West Bengal, India</p>
+            <p><strong>Historical Background:</strong> Santiniketan is a cultural and educational center founded by
+                Rabindranath Tagore. It was designated a UNESCO World Heritage Site in 2023.</p>
+            <p><strong>Architectural Features:</strong> The site includes the Visva-Bharati University and various
+                buildings designed by Tagore, reflecting a blend of traditional and modern architectural styles.</p>
+        </section>
+
+        <!-- Moidams – the Mound-Burial System of the Ahom Dynasty Section -->
+        <section id="moidams-ahom-dynasty">
+            <h2>Moidams – the Mound-Burial System of the Ahom Dynasty</h2>
+            <img src="moidams-ahom-dynasty.jpg" alt="Moidams" class="site-image">
+            <p><strong>Location:</strong> Assam, India</p>
+            <p><strong>Historical Background:</strong> The Moidams are burial mounds used by the Ahom Dynasty, dating
+                from the 13th to 19th centuries. They were designated a UNESCO World Heritage Site in 2023.</p>
+            <p><strong>Architectural Features:</strong> The Moidams are known for their distinctive mounded structures,
+                which house the remains of Ahom kings and important figures, and reflect traditional burial practices.
+            </p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Indian Heritage Sites Blog. All rights reserved.</p>
+    </footer>
+    <script>
+        function searchSites() {
+            const input = document.getElementById('search-input').value.toLowerCase();
+            const sections = document.querySelectorAll('main section');
+
+            sections.forEach(section => {
+                const title = section.querySelector('h2').textContent.toLowerCase();
+                if (title.includes(input)) {
+                    section.classList.remove('hidden');
+                } else {
+                    section.classList.add('hidden');
+                }
+            });
+        }
+
+        function handleKeyUp(event) {
+            if (event.key === 'Enter') {
+                searchSites();
+            }
+        }
+    </script>
+</body>
+
+</html>
