@@ -48,4 +48,19 @@ Follow these steps to set up the project locally:
    ```bash
    git clone https://github.com/YashBaraii/TECHNEX-25-HACK-A-THON.git
    cd TECHNEX-25-HACK-A-THON
-  ```
+   ```
+2. **Create and Activate Virtual Environment**:
+   ```bash
+   python -m venv env
+   .\env\Scripts\activate
+   ```
+3. **Installing necessary dependencies**:
+   ```bash
+   pip install -r .\requirements.txt
+   ```
+4. **Running Django Server**:
+   ```bash
+   python manage.py runserver 127.0.0.1:3000
+   ```
+5. **That's all you are ready to go !**
+   
