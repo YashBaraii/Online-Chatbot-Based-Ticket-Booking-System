@@ -14,18 +14,24 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+# OCTBS/urls.py
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from . import views
+from  .views import logout_view
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home, name='home'),
-    path('login/', views.login, name='login'),
     path('signup/', views.signup, name='signup'),
+    path('login/', views.login_view, name='login'),
+    path('', views.home, name='home'),
     path('interactive_maps/', views.interactive_maps, name='interactive_maps'),
     path('blog/', views.blog, name='blog'),
     path('store/', views.store, name='stores'),
     path('events/', views.events, name='eventss'),
-    path('payment/', views.payments, name='paymentss'),
+    path('payment/', views.payments, name='payments'),
     path('success/', views.success, name='successs'),
+    path('logout/', logout_view, name='logout'),
+
+    path("__reload__/", include("django_browser_reload.urls")),
 ]

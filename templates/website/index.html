@@ -1,14 +1,16 @@
 {% load static %}
+{% load static tailwind_tags %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ticket Booking</title>
+    <title>Ticket GPT</title>
     <link rel="stylesheet" href="{% static "style.css" %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <script src="https://www.chatbase.co/chatbot-iframe/i2ENdr8U2J9EHL8PPUk__"></script>
+    {% tailwind_css %}
 </head>
 <body>
     <!-- home section starts here  -->
@@ -20,7 +22,7 @@
                     <div class="bar">
                         <i class="fa fa-bars"></i>
                     </div>
-                    <h3><a style="color: #673721; text-decoration: none;" href="{% url 'home' %}">PatrioticBuddy</a></h3>
+                    <h3><a style="color: #673721; text-decoration: none; text:3xl;" href="{% url 'home' %}">Ticket GPT</a></h3>
                 </div>
                 <div class="menu">
                     <div class="close">
@@ -35,8 +37,12 @@
                     </ul>
                 </div>
                 <div class="signup-login">
-                    <a href="{% url 'signup' %}" target="_blank">sign up</a>
-                    <a href="{% url 'login'  %}" target="_blank">login</a>
+                    {% if user.is_authenticated %}
+                        <a href="{% url 'logout' %}">Logout</a>
+                    {% else %}
+                        <a href="{% url 'signup' %}">Sign Up</a>
+                        <a href="{% url 'login' %}">Login</a>
+                    {% endif %}
                 </div>
             </nav>
             <df-messenger
@@ -47,10 +53,9 @@
                     ></df-messenger>
 
                     <div class="content">
-                        <h5>Ticket-GPT</h5>
-                        <h1>let's embark on your journey through History</h1>
-                        <p>Embark on an unforgettable journey through art and history—our chatbot is your personal guide, ready
-                            to assist with everything from ticket booking to exhibit recommendations</p>
+                        <h1>Let's Embark on Your Journey Through History</h1>
+                        <p>Step into the past with Ticket-GPT—your AI-powered companion for booking tickets to the world's most iconic heritage sites. From ancient wonders to timeless landmarks, we make exploring history effortless and unforgettable.</p>
+
                         <div id="book">
                             <a href="#feature">Book Now</a>
                         </div>
@@ -64,17 +69,17 @@
             <div class="content">
                 <h2>About Us</h2>
                 <p>
-                    Welcome to TickkkBot, your ultimate companion for exploring the rich tapestry of history and heritage. Our platform is dedicated to simplifying your journey through time by offering a seamless ticket booking experience for iconic heritage sites across the country. Whether it's the majestic Taj Mahal, the ancient Ajanta and Ellora Caves, or the vibrant City Palace of Jaipur, we've got you covered.
+                    Welcome to Ticket GPT, your ultimate companion for exploring the rich tapestry of history and heritage. Our platform is dedicated to simplifying your journey through time by offering a seamless ticket booking experience for iconic heritage sites across the country. Whether it's the majestic Taj Mahal, the ancient Ajanta and Ellora Caves, or the vibrant City Palace of Jaipur, we've got you covered.
                 </p>
                 <p>
-                    At TickkkBot, we combine cutting-edge technology with a passion for cultural preservation. Our AI-powered chatbot assists you every step of the way, from finding the best destinations to answering your questions instantly. We believe that history should be accessible to everyone, and our intuitive platform ensures a hassle-free booking process.
+                    At Ticket GPT, we combine cutting-edge technology with a passion for cultural preservation. Our AI-powered chatbot assists you every step of the way, from finding the best destinations to answering your questions instantly. We believe that history should be accessible to everyone, and our intuitive platform ensures a hassle-free booking process.
                 </p>
                 <p>
-                    Join us in celebrating the beauty of art, history, and culture. Let’s make your next heritage visit unforgettable!
+                    Join us in celebrating the beauty of art, history, and culture. Let's make your next heritage visit unforgettable!
                 </p>
             </div>
             <div class="image">
-                <img src="heritage-sites.jpg" alt="Heritage Sites">
+                <img src="{% static "images/aboutpic.png" %}" alt="Heritage Sites">
             </div>
         </div>
     </section>
@@ -82,7 +87,7 @@
     <section class="interactive_maps" id="interactive_mapsID">
         <div class="container">
             <div class="image">
-                <iframe src='https://my.spline.design/worldplanet-131ad2780a46bffd1a4e3cfa20e2d407/' frameborder='0' width='600px' height='600px'></iframe>
+                <iframe src='https://my.spline.design/worldplanet-131ad2780a46bffd1a4e3cfa20e2d407/' frameborder='0' width='550px' height='550px'></iframe>
             </div>  
             <div class="content">
                 <h2>Interactive Maps</h2>
@@ -137,33 +142,33 @@
             </div>
             <div class="gallery">
                 <div class="box box1">
-                    <img src="tajmahal.png" alt="">
+                    <img src="{% static "images/tajmahal.png" %}" alt="">
                     <div class="text">
-                        <h2>Taj Mahal, Agra</h2>
+                        <h2 class="text-gray-50">Taj Mahal, Agra</h2>
                     </div>
                 </div>
                 <div class="box box2">
-                    <img src="kazirangaNational Park.png" alt="">
+                    <img src="{% static "images/kazirangaNational Park.png" %}" alt="">
                     <div class="text">
-                        <h2>Ranthambore National Park, Rajasthan</h2>
+                        <h2 class="text-gray-50">Ranthambore National Park, Rajasthan</h2>
                     </div>
                 </div>
                 <div class="box box3">
-                    <img src="4.jpeg" alt="">
+                    <img src="{% static "images/4.jpeg" %}" alt="">
                     <div class="text">
-                        <h2>Ajanta and Ellora Caves, Maharashtra</h2>
+                        <h2 class="text-gray-50">Ajanta and Ellora Caves, Maharashtra</h2>
                     </div>
                 </div>
                 <div class="box box4">
-                    <img src="asian-lion.jpeg" alt="">
+                    <img src="{% static "images/asian-lion.jpeg" %}" alt="">
                     <div class="text">
-                        <h2>Gir National Park, Gujarat</h2>
+                        <h2 class="text-gray-50">Gir National Park, Gujarat</h2>
                     </div>
                 </div>
                 <div class="box box5">
-                    <img src="city-palace.jpg" alt="">
+                    <img src="{% static "images/city-palace.jpg" %}" alt="">
                     <div class="text">
-                        <h2>City Palace, Jaipur, Rajasthan</h2>
+                        <h2 class="text-gray-50">City Palace, Jaipur, Rajasthan</h2>
                     </div>
                 </div>
             </div>
@@ -365,7 +370,7 @@
                     <h3>Ciphers</h3>
                     <p>Embark on an unforgettable journey through art and history—our chatbot is your personal guide, ready to assist with everything from ticket booking to exhibit recommendations</p>
                     <h5>get in touch</h5>
-                    <a href="#">sahilgiri59902@gmail.com</a>
+                    <a>sahilgiri59902@gmail.com</a>
                     <div class="social">
                         <a href="#"><i class="fa fa-linkedin-square"></i></a>
                         <a href="#"><i class="fa fa-facebook-square"></i></a>
@@ -409,9 +414,7 @@
     </footer>
     <!-- footer section ends here  -->
     
-    {% comment %} <script>
-        (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="i2ENdr8U2J9EHL8PPUk__";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
-        </script>{% endcomment %}
+
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js" integrity="sha512-EZI2cBcGPnmR89wTgVnN3602Yyi7muWo8y1B3a8WmIv1J9tYG+udH4LvmYjLiGp37yHB7FfaPBo8ly178m9g4Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js" integrity="sha512-OzC82YiH3UmMMs6Ydd9f2i7mS+UFL5f977iIoJ6oy07AJT+ePds9QOEtqXztSH29Nzua59fYS36knmMcv79GOg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
