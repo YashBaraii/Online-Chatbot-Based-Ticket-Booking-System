@@ -14,7 +14,7 @@
 
 ## Project Overview
 
-This repository contains the project developed for the **TECHNEX-25 Hackathon**. The project focuses on [insert brief description of the project goal or theme, e.g., "building a smart solution for real-time traffic monitoring using AI and IoT."] 
+This repository contains the project developed for the **TECHNEX-25 Hackathon**. The project focuses on [insert brief description of the project goal or theme, e.g., "Online Chatbot based Ticket Booking System"] 
 
 The solution is designed to address [insert problem statement] and leverages advanced technologies to provide innovative features.
 
