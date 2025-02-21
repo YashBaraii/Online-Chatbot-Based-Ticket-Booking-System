@@ -47,7 +47,7 @@ Follow these steps to set up the project locally:
 1. **Clone the Repository**:
    ```bash
    git clone https://github.com/YashBaraii/TECHNEX-25-HACK-A-THON.git
-   cd TECHNEX-25-HACK-A-THON
+   cd Online-Chatbot-Based-Ticket-Booking-System
    ```
 2. **Create and Activate Virtual Environment**:
    ```bash
